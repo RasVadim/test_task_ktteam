@@ -29,13 +29,9 @@ window.onload = function() {
     ctx.putImageData(img, point[0], point[1]);
   }
 
-  let A = [0, 0],
-      B = [500, 0],
-      C = [500, 500],
-      D = [0, 500],
-      N = [250, 250];
+  let N = [250, 250];
 
-  let tops = [A, B, C, D];
+  let tops = [[0, 0], [500, 0], [500, 500], [0, 500]];
 
   for (let top in tops) {
      setPixel(tops[top]);
@@ -48,7 +44,7 @@ window.onload = function() {
 
   setInterval(function() {
     for (let i = 0; i < 30; i++) {
-      let M = tops[Math.floor(Math.random() * 3)];
+      let M = tops[Math.floor(Math.random() * 4)];
       xN = (xN + M[0]) / 2;
       yN = (yN + M[1]) / 2;
 
@@ -57,7 +53,6 @@ window.onload = function() {
           green =  Math.floor(255 - yN *255/500),
           alpha = 255;
       setPixel([xN, yN], red, blue, green, alpha);
-      // return xN, yN;
     }
   }, 100);
 };
