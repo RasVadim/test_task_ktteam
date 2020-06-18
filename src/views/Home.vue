@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  background-color: black;
   img {
     height: 50px;
   }
